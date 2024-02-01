@@ -61,7 +61,7 @@ try:
     if os.system(install_project_packages) != 0:
         print("installation of project packages failed, exiting.")
         sys.exit(1)
-    if os.system('cd examples') != 0:
+    if os.chdir('examples') != 0:
         print("installation of project packages failed, exiting.")
         sys.exit(1)
 
