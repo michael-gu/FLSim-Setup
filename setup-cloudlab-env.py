@@ -48,6 +48,8 @@ try:
     if os.system(cd_flsim) != 0:
         print("cd to FLSim failed, exiting.")
         sys.exit(1)
+    print("shoudld be in /mydata/FLSim")
+    print("actual path: " + os.getcwd())
     if os.system(install_mysql_connector) != 0:
         print("installation of mysql-connector failed, exiting.")
         sys.exit(1)
