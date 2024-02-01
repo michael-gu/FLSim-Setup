@@ -19,7 +19,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'michgu'@'localhost' WITH GRANT OPTION;"'''
 try:
     # change directory to root /
     for _ in range(3):
-        if os.system(cd_backwards) != 0:
+        if os.chdir('..') != 0:
             print("cd to root failed, exiting.")
             sys.exit(1)
     if os.path.exists("/mydata/FLSim"):
@@ -49,13 +49,8 @@ try:
         sys.exit(1)
         
     # change directory to /mydata/FLSim
-    print("current path: " + os.getcwd())
-    for _ in range(3):
-        if os.system(cd_backwards) != 0:
-            print("cd to root failed, exiting.")
-            sys.exit(1)
     print("current path at root: " + os.getcwd())
-    if os.system(cd_flsim) != 0:
+    if os.chdir(mydata/FLSim) != 0:
         print("cd to FLSim failed, exiting.")
         sys.exit(1)
     print("shoudld be in /mydata/FLSim")
