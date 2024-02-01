@@ -23,7 +23,7 @@ try:
             print("cd to root failed, exiting.")
             sys.exit(1)
     if os.path.exists("/mydata/FLSim"):
-        if os.system("rm -rf /mydata/FLSim") != 0:
+        if os.system("sudo rm -rf /mydata/FLSim") != 0:
             print("Failed to remove /mydata/FLSim, exiting.")
             sys.exit(1)
     if os.system(git_clone_flsim) != 0:
