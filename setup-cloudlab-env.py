@@ -19,8 +19,9 @@ GRANT ALL PRIVILEGES ON *.* TO 'michgu'@'localhost' WITH GRANT OPTION;"'''
 try:
     # change directory to root /
     for _ in range(3):
-        print("current path: " + os.getcwd())
-        if os.chdir('..') != 0:
+        try:
+            os.chdir('..')
+        except Exception as e:
             print("cd to root failed, exiting.")
             sys.exit(1)
     if os.path.exists("/mydata/FLSim"):
@@ -50,20 +51,22 @@ try:
         sys.exit(1)
         
     # change directory to /mydata/FLSim
-    print("current path: " + os.getcwd())
-    if os.chdir('mydata/FLSim') != 0:
-        print("cd to FLSim failed, exiting.")
+    try:
+        os.chdir('mydata/FLSim')
+        print("current path: " + os.getcwd())
+    except Exception as e:
+        print("cd to flsim failed, exiting.")
         sys.exit(1)
-    print("shoudld be in /mydata/FLSim")
-    print("actual path: " + os.getcwd())
     if os.system(install_mysql_connector) != 0:
         print("installation of mysql-connector failed, exiting.")
         sys.exit(1)
     if os.system(install_project_packages) != 0:
         print("installation of project packages failed, exiting.")
         sys.exit(1)
-    if os.chdir('examples') != 0:
-        print("installation of project packages failed, exiting.")
+    try:
+        os.chdir('examples')
+    except Exception as e:
+        print("cd to examples failed, exiting.")
         sys.exit(1)
 
 except KeyboardInterrupt:
