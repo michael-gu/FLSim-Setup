@@ -68,6 +68,10 @@ try:
     except Exception as e:
         print("cd to examples failed, exiting.")
         sys.exit(1)
+        
+    print("Setup completed.")
+    print("To run the benchmark, please run the following command:")
+    print("cd ../../../mydata/FLSim/examples")
 
 except KeyboardInterrupt:
         print("Interrupted by user, exiting.")
