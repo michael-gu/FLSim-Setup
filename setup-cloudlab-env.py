@@ -49,6 +49,7 @@ try:
         sys.exit(1)
         
     # change directory to /mydata/FLSim
+    print("current path: " + os.getcwd())
     for _ in range(3):
         if os.system(cd_backwards) != 0:
             print("cd to root failed, exiting.")
