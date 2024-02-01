@@ -1,5 +1,6 @@
 import os
 import sys
+import subprocess
 
 cd_backwards = "cd .."
 git_clone_flsim = "sudo git clone https://github.com/michael-gu/FLSim-Single-Node-BM.git /mydata/FLSim"
@@ -81,10 +82,10 @@ try:
         sys.exit(1)
     print("Benchmarking beginning now...")
     # benchmark
-    if os.system("nohup sudo python3 record_stats.py false 10") != 0:
+    if os.system("sudo python3 record_stats.py false 10") != 0:
         print("benchmarking without feature failed, exiting.")
         sys.exit(1)
-    if os.system("nohup sudo python3 record_stats.py true 10") != 0:
+    if os.system("sudo python3 record_stats.py true 10") != 0:
         print("benchmarking with feature failed, exiting.")
         sys.exit(1)
 
