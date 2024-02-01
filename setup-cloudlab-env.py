@@ -6,7 +6,7 @@ git_clone_flsim = "sudo git clone https://github.com/michael-gu/FLSim-Single-Nod
 apt_update = "sudo apt update"
 # require confirmation
 apt_install_python3_pip = "sudo apt install -y python3-pip"
-cd_flsim = "cd /mydata/FLSim"
+cd_flsim = "cd mydata/FLSim"
 cd_mydata = "cd /mydata"
 install_mysql_connector = "sudo pip install --upgrade mysql-connector-python"
 install_project_packages = "sudo pip install -e ."
@@ -49,6 +49,10 @@ try:
         sys.exit(1)
         
     # change directory to /mydata/FLSim
+    for _ in range(3):
+        if os.system(cd_backwards) != 0:
+            print("cd to root failed, exiting.")
+            sys.exit(1)
     if os.system(cd_flsim) != 0:
         print("cd to FLSim failed, exiting.")
         sys.exit(1)
