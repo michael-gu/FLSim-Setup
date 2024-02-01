@@ -13,7 +13,7 @@ install_project_packages = "sudo pip install -e ."
 install_mysql_server = "sudo apt install -y mysql-server"
 alias_1 = "alias mysqladmin=/usr/local/mysql/bin/mysqladmin"
 alias_2 = "alias mysql=/usr/local/mysql/bin/mysql"
-mysql_command = '''sudo mysql -u root -ptest -e "CREATE DATABASE IF NOT EXISTS cifar10_benchmarks; USE cifar10_benchmarks; CREATE USER IF NOT EXISTS 'michgu'@'localhost' IDENTIFIED BY 'Dolphin#1';
+mysql_command = '''sudo mysql -u root -ptest -e "CREATE DATABASE IF NOT EXISTS benchmarks; USE benchmarks; CREATE USER IF NOT EXISTS 'michgu'@'localhost' IDENTIFIED BY 'Dolphin#1';
 GRANT ALL PRIVILEGES ON *.* TO 'michgu'@'localhost' WITH GRANT OPTION;"'''
 
 try:
@@ -71,7 +71,7 @@ try:
         
     print("Setup completed.")
     print("To run the benchmark, please run the following command:")
-    print("cd ../../../mydata/FLSim/examples")
+    print("cd ../../../mydata/FLSim/runs")
 
 except KeyboardInterrupt:
         print("Interrupted by user, exiting.")
