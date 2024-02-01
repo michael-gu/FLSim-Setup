@@ -14,7 +14,7 @@ install_mysql_server = "sudo apt install -y mysql-server"
 alias_1 = "alias mysqladmin=/usr/local/mysql/bin/mysqladmin"
 alias_2 = "alias mysql=/usr/local/mysql/bin/mysql"
 mysql_command = '''sudo mysql -u root -ptest -e "CREATE DATABASE IF NOT EXISTS cifar10_benchmarks; USE cifar10_benchmarks; CREATE USER IF NOT EXISTS 'michgu'@'localhost' IDENTIFIED BY 'Dolphin#1';
-GRANT ALL PRIVILEGES ON *.* TO 'michgu'@'localhost' WITH GRANT OPTION;"'''
+GRANT ALL PRIVILEGES ON *.* TO 'michgu'@'localhost' WITH GRANT OPTION; exit;"'''
 
 try:
     # change directory to root /
