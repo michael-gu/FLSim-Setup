@@ -28,6 +28,9 @@ try:
         if os.system("sudo rm -rf /mydata/FLSim") != 0:
             print("Failed to remove /mydata/FLSim, exiting.")
             sys.exit(1)
+    if os.system("sudo chmod 777 /mydata") != 0:
+        print("change perms for mydata failed, exiting.")
+        sys.exit(1)
     if os.system(git_clone_flsim) != 0:
         print("git clone failed, exiting.")
         sys.exit(1)
